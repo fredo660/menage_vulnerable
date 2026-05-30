@@ -1,0 +1,501 @@
+id_menage;revenu_mensuel;taille_menage;nb_enfants;acces_eau;electricite;type_logement;emploi_chef;niveau_etude;distance_centre_sante_km;zone;alimentation_suffisante;acces_internet;depenses_mensuelles;vulnerabilite
+1;309605;1;1;oui;oui;précaire;instable;primaire;23.8;rural;oui;oui;205225;0
+2;233408;9;3;oui;oui;moyen;stable;primaire;34.8;rural;non;oui;185753;0
+3;327722;4;2;oui;oui;précaire;stable;primaire;2.2;urbain;oui;oui;375440;0
+4;432763;5;5;oui;non;moyen;instable;aucun;9.5;urbain;oui;oui;286901;0
+5;221901;5;3;oui;oui;précaire;stable;primaire;37.5;urbain;oui;non;137533;0
+6;221903;3;3;oui;non;moyen;instable;secondaire;33.8;rural;non;oui;115937;1
+7;439505;5;0;oui;non;moderne;stable;secondaire;16.1;urbain;non;non;301243;1
+8;342092;9;4;oui;oui;moyen;stable;universitaire;6.0;urbain;oui;non;377249;0
+9;193663;3;3;oui;oui;moyen;instable;primaire;22.4;urbain;non;non;112360;1
+10;315107;5;5;oui;oui;précaire;stable;secondaire;28.9;rural;non;non;269535;1
+11;194389;11;4;non;oui;précaire;stable;primaire;38.2;urbain;non;non;178694;1
+12;194112;2;1;non;non;précaire;stable;universitaire;37.9;rural;oui;non;106460;1
+13;279035;3;1;oui;non;précaire;instable;secondaire;38.6;rural;non;non;274265;1
+14;30000;7;5;oui;oui;précaire;stable;primaire;23.7;rural;oui;oui;20000;1
+15;43009;4;0;non;non;précaire;stable;secondaire;9.0;rural;oui;non;38696;1
+16;182525;8;6;oui;oui;moyen;stable;primaire;29.3;rural;oui;non;103837;0
+17;128460;6;6;non;oui;précaire;stable;primaire;11.5;urbain;oui;non;104077;1
+18;287709;9;1;oui;non;moderne;sans emploi;universitaire;34.0;rural;oui;non;186902;1
+19;141037;1;0;oui;non;précaire;instable;primaire;17.2;urbain;non;non;125387;1
+20;80523;3;1;oui;non;moyen;instable;secondaire;2.8;rural;oui;non;88325;1
+21;425877;9;1;non;oui;précaire;sans emploi;primaire;37.7;urbain;oui;non;224786;1
+22;222906;11;5;non;oui;moyen;stable;primaire;27.0;urbain;oui;oui;228769;0
+23;258103;8;1;oui;oui;précaire;sans emploi;universitaire;35.2;urbain;oui;oui;279685;1
+24;79030;10;0;oui;oui;moderne;stable;universitaire;10.9;rural;non;non;48114;1
+25;184674;4;2;oui;oui;précaire;instable;universitaire;33.9;urbain;oui;oui;128103;0
+26;263310;3;2;oui;oui;moyen;instable;aucun;37.8;urbain;oui;oui;138295;0
+27;111880;9;2;oui;oui;précaire;sans emploi;universitaire;2.1;urbain;oui;non;108171;1
+28;295083;9;6;non;oui;moderne;stable;primaire;32.1;urbain;oui;oui;184589;0
+29;177923;7;3;oui;non;précaire;sans emploi;universitaire;9.3;rural;non;non;126971;1
+30;214996;4;1;oui;oui;précaire;sans emploi;universitaire;11.5;rural;oui;oui;255158;0
+31;177795;1;0;non;oui;moyen;sans emploi;aucun;24.1;rural;oui;non;143209;1
+32;472273;2;1;non;oui;précaire;stable;primaire;32.4;rural;oui;non;479794;1
+33;248380;7;1;non;non;moyen;instable;aucun;36.1;urbain;oui;non;180902;1
+34;123074;9;2;oui;oui;précaire;instable;primaire;23.0;rural;oui;non;87716;1
+35;348705;10;5;oui;oui;précaire;instable;universitaire;31.9;urbain;oui;oui;300170;0
+36;103498;6;0;non;non;moyen;stable;primaire;1.5;rural;oui;non;113311;1
+37;275063;7;3;oui;oui;précaire;stable;secondaire;35.8;urbain;non;non;287411;1
+38;30000;12;7;oui;oui;moderne;instable;secondaire;26.9;urbain;non;non;34950;1
+39;90617;10;6;non;oui;moderne;instable;primaire;10.7;rural;oui;non;93885;1
+40;273623;11;3;oui;oui;précaire;stable;primaire;21.8;rural;oui;oui;269727;0
+41;338615;2;1;oui;oui;moyen;stable;primaire;36.2;rural;oui;non;372379;0
+42;270564;7;7;oui;oui;moyen;sans emploi;universitaire;17.1;rural;non;non;249534;1
+43;236122;4;2;oui;oui;précaire;instable;primaire;7.0;urbain;oui;oui;220910;0
+44;213867;7;0;oui;oui;moderne;stable;primaire;13.4;urbain;oui;oui;238621;0
+45;72577;7;4;non;oui;moyen;stable;universitaire;9.4;urbain;oui;non;38333;1
+46;163618;4;1;non;oui;précaire;instable;aucun;37.9;urbain;oui;oui;124059;1
+47;194723;12;1;oui;oui;précaire;instable;universitaire;23.2;rural;non;oui;225689;1
+48;376854;10;3;oui;non;moderne;instable;aucun;39.4;urbain;non;oui;301432;1
+49;291234;9;5;oui;oui;moyen;stable;primaire;35.7;urbain;oui;oui;181524;0
+50;38435;11;4;oui;non;moyen;instable;secondaire;23.9;rural;oui;oui;44363;1
+51;288890;8;3;oui;oui;moyen;stable;primaire;13.3;urbain;oui;oui;196689;0
+52;203790;10;4;oui;oui;précaire;stable;primaire;22.4;urbain;oui;non;203441;1
+53;168769;1;0;oui;oui;précaire;instable;primaire;22.4;urbain;oui;non;149406;1
+54;323401;8;4;oui;oui;moyen;stable;secondaire;38.1;urbain;oui;oui;328906;0
+55;373719;10;4;non;non;précaire;stable;primaire;28.5;urbain;oui;oui;201123;1
+56;361753;3;3;oui;oui;précaire;instable;primaire;38.6;urbain;oui;non;209766;1
+57;149293;8;1;oui;oui;précaire;sans emploi;universitaire;3.9;urbain;oui;non;118138;1
+58;212894;10;3;oui;oui;moderne;stable;secondaire;17.4;rural;oui;oui;249527;0
+59;289751;4;1;oui;oui;précaire;instable;primaire;16.6;urbain;oui;non;151495;1
+60;367065;5;5;non;oui;précaire;stable;secondaire;23.8;urbain;non;oui;213023;1
+61;192499;3;2;non;oui;précaire;stable;secondaire;23.0;urbain;oui;oui;189048;0
+62;227720;5;4;oui;oui;moyen;sans emploi;secondaire;24.3;rural;oui;oui;221345;0
+63;117239;10;0;non;oui;précaire;stable;secondaire;19.1;rural;oui;non;73513;1
+64;106455;11;7;non;oui;moyen;stable;aucun;6.9;rural;oui;non;102602;1
+65;347503;9;0;oui;oui;précaire;sans emploi;primaire;20.8;urbain;non;non;305738;1
+66;412748;4;4;oui;non;moyen;instable;primaire;22.2;urbain;non;oui;408114;1
+67;241358;11;3;oui;oui;précaire;stable;primaire;33.7;urbain;oui;non;230109;1
+68;370423;12;4;oui;oui;moderne;sans emploi;primaire;22.3;urbain;oui;non;316996;1
+69;293396;2;1;oui;non;précaire;instable;primaire;0.6;rural;non;non;265801;1
+70;172585;3;3;oui;oui;moyen;instable;primaire;13.2;rural;oui;non;155371;0
+71;293367;7;0;oui;oui;moderne;stable;universitaire;31.8;urbain;oui;oui;344816;0
+72;434564;10;5;non;non;moyen;instable;primaire;29.0;urbain;oui;non;264237;1
+73;245700;5;2;oui;oui;précaire;stable;secondaire;21.6;rural;non;non;275480;1
+74;437757;9;0;oui;oui;moyen;stable;primaire;4.1;rural;non;non;434571;0
+75;30000;3;2;non;oui;moyen;stable;primaire;6.3;urbain;oui;non;31642;1
+76;348628;2;2;non;oui;précaire;sans emploi;aucun;18.7;urbain;oui;oui;176607;1
+77;260445;5;5;oui;oui;moderne;sans emploi;primaire;38.5;rural;oui;non;185302;1
+78;214119;8;1;oui;oui;moyen;sans emploi;primaire;39.1;rural;oui;oui;191882;1
+79;261011;12;0;non;oui;moderne;sans emploi;secondaire;9.6;rural;non;oui;165244;1
+80;30000;12;2;oui;non;moyen;stable;primaire;23.4;urbain;non;oui;21197;1
+81;223639;3;1;oui;oui;moderne;instable;universitaire;33.3;rural;oui;non;187251;0
+82;292853;12;5;non;oui;précaire;instable;primaire;27.2;rural;oui;oui;319801;1
+83;427347;2;1;oui;oui;moyen;instable;secondaire;23.6;rural;non;non;246084;0
+84;187807;1;1;non;oui;précaire;sans emploi;universitaire;12.4;urbain;oui;oui;218303;1
+85;152980;8;1;oui;non;précaire;instable;secondaire;29.9;urbain;non;oui;155976;1
+86;189789;7;1;non;oui;moderne;stable;secondaire;9.1;urbain;oui;oui;143078;0
+87;359848;6;4;non;oui;précaire;stable;universitaire;38.0;rural;non;oui;233352;1
+88;289450;1;0;oui;oui;précaire;instable;aucun;30.7;rural;oui;oui;320938;0
+89;186428;3;0;oui;non;moderne;instable;secondaire;4.8;urbain;non;oui;139964;0
+90;311592;10;5;oui;oui;précaire;stable;aucun;3.0;rural;oui;oui;285283;0
+91;261649;4;4;oui;non;moderne;instable;primaire;38.6;rural;oui;non;204382;1
+92;366237;8;7;oui;oui;moyen;stable;primaire;25.5;rural;oui;oui;438107;0
+93;165753;8;6;oui;oui;moderne;instable;secondaire;29.0;rural;oui;non;109387;0
+94;210680;8;6;oui;oui;moyen;instable;primaire;6.5;urbain;non;oui;228006;0
+95;202947;2;2;oui;non;moyen;instable;secondaire;13.5;urbain;oui;oui;195993;0
+96;74378;12;0;non;oui;précaire;instable;primaire;26.4;rural;oui;oui;81203;1
+97;285534;5;4;oui;oui;moyen;instable;secondaire;27.2;urbain;oui;non;274250;0
+98;281326;1;0;oui;non;moderne;stable;primaire;6.2;rural;oui;oui;286580;0
+99;250613;2;2;oui;oui;moyen;stable;primaire;13.3;rural;non;non;280270;0
+100;221849;10;0;oui;oui;moyen;instable;primaire;11.3;urbain;non;oui;177687;0
+101;80155;11;7;oui;oui;précaire;sans emploi;aucun;8.6;urbain;non;non;82953;1
+102;199522;2;0;oui;oui;précaire;instable;primaire;22.6;urbain;oui;oui;155218;0
+103;208874;7;0;oui;oui;précaire;stable;primaire;25.8;rural;oui;oui;245706;0
+104;153726;10;7;non;non;précaire;sans emploi;primaire;23.8;urbain;oui;oui;110251;1
+105;230645;6;6;oui;oui;précaire;instable;universitaire;14.3;urbain;non;non;246911;1
+106;298486;3;2;oui;oui;moyen;instable;primaire;31.0;urbain;oui;non;308011;0
+107;476342;10;5;non;oui;précaire;stable;primaire;12.5;urbain;oui;oui;407337;1
+108;270949;8;0;oui;non;précaire;sans emploi;universitaire;24.8;urbain;oui;non;240608;1
+109;280906;1;1;non;oui;précaire;instable;primaire;38.3;rural;oui;non;305109;1
+110;241066;2;2;oui;oui;moyen;sans emploi;primaire;24.6;rural;oui;non;185908;1
+111;30000;11;0;oui;oui;précaire;stable;secondaire;11.7;rural;non;non;34033;1
+112;246818;6;0;oui;oui;précaire;sans emploi;secondaire;16.0;rural;oui;non;176896;1
+113;257227;6;6;oui;oui;moderne;sans emploi;universitaire;4.2;urbain;oui;non;131896;0
+114;545589;4;2;non;oui;précaire;stable;aucun;33.9;urbain;oui;non;591737;1
+115;226916;1;1;non;oui;moyen;stable;primaire;27.9;rural;oui;non;228011;0
+116;286185;6;5;oui;non;moyen;instable;secondaire;9.7;urbain;oui;non;300224;0
+117;245834;4;2;oui;oui;moyen;instable;secondaire;20.4;rural;oui;oui;157281;0
+118;109758;5;0;oui;non;moyen;stable;secondaire;34.1;rural;oui;non;75837;1
+119;387138;3;3;oui;non;moderne;sans emploi;universitaire;16.9;rural;oui;oui;298218;1
+120;340231;4;0;oui;oui;moyen;stable;aucun;2.0;urbain;non;non;368054;0
+121;344923;8;7;oui;non;précaire;stable;aucun;37.6;rural;oui;oui;359865;1
+122;140873;2;0;oui;oui;moyen;stable;secondaire;20.2;urbain;oui;non;127142;0
+123;418335;5;3;oui;oui;moyen;stable;secondaire;21.2;rural;oui;non;368493;0
+124;81777;9;0;oui;oui;moyen;sans emploi;primaire;1.1;rural;non;oui;82844;1
+125;320422;10;5;oui;oui;précaire;instable;secondaire;27.5;rural;non;non;201095;1
+126;512854;12;7;oui;oui;moyen;sans emploi;primaire;12.7;urbain;oui;non;426376;1
+127;131135;11;3;oui;non;précaire;instable;primaire;32.1;urbain;oui;oui;105932;1
+128;182044;6;1;oui;oui;moderne;instable;secondaire;29.2;rural;oui;non;195813;0
+129;261958;6;0;oui;oui;précaire;instable;primaire;27.7;rural;oui;oui;290518;0
+130;189582;7;4;oui;non;précaire;instable;primaire;20.8;urbain;non;oui;98923;1
+131;63920;11;7;oui;oui;moyen;stable;primaire;22.9;rural;oui;non;74414;1
+132;258227;2;2;oui;oui;précaire;stable;universitaire;1.5;urbain;oui;non;294244;0
+133;122523;5;5;oui;non;précaire;sans emploi;primaire;5.3;urbain;non;non;138337;1
+134;306831;2;2;non;non;moyen;instable;primaire;12.0;urbain;oui;oui;305816;1
+135;139669;3;2;oui;oui;précaire;stable;secondaire;1.5;rural;oui;oui;148407;0
+136;435992;10;1;oui;oui;moyen;instable;primaire;16.7;rural;oui;oui;314751;0
+137;156009;8;5;oui;non;moyen;instable;secondaire;5.6;urbain;oui;non;168797;0
+138;211352;5;1;oui;non;précaire;sans emploi;primaire;11.7;rural;oui;oui;247164;1
+139;347622;11;4;oui;oui;moyen;instable;secondaire;7.3;urbain;oui;non;255965;0
+140;102296;1;0;oui;non;moyen;stable;primaire;23.1;rural;oui;oui;114806;1
+141;277295;11;4;oui;non;moyen;stable;aucun;2.9;rural;oui;non;178249;0
+142;406857;6;6;oui;oui;moderne;sans emploi;aucun;15.1;rural;oui;oui;336279;0
+143;57102;4;1;oui;oui;précaire;instable;primaire;34.7;urbain;oui;oui;51641;1
+144;272156;3;3;non;oui;moderne;instable;aucun;16.0;urbain;oui;oui;247210;0
+145;281185;5;3;oui;non;moyen;stable;aucun;4.7;urbain;oui;oui;212588;0
+146;343818;1;1;oui;oui;précaire;stable;primaire;18.3;urbain;oui;non;321906;0
+147;101565;3;0;oui;non;précaire;sans emploi;secondaire;8.4;rural;oui;non;54003;1
+148;91545;6;6;oui;oui;moyen;instable;primaire;24.7;urbain;oui;non;93149;1
+149;312632;6;4;non;oui;moyen;stable;secondaire;15.1;urbain;oui;non;284054;0
+150;285638;12;0;oui;oui;moyen;sans emploi;secondaire;9.5;rural;oui;non;247637;0
+151;280059;7;2;non;oui;moyen;instable;primaire;17.9;rural;oui;oui;180000;1
+152;291573;10;7;non;oui;précaire;stable;primaire;13.3;rural;oui;non;209823;1
+153;168397;9;5;oui;oui;moderne;instable;secondaire;10.9;urbain;oui;non;117087;0
+154;277870;5;2;oui;oui;moyen;instable;secondaire;37.4;urbain;non;oui;250481;0
+155;285168;7;5;non;non;précaire;stable;secondaire;14.2;rural;oui;oui;238216;1
+156;164277;9;4;non;oui;précaire;instable;secondaire;10.1;urbain;oui;non;155498;1
+157;473892;7;5;oui;oui;moyen;stable;secondaire;37.2;urbain;oui;non;528332;0
+158;306859;4;2;oui;oui;moderne;stable;secondaire;21.6;rural;non;non;349592;0
+159;107043;3;0;non;oui;moyen;sans emploi;universitaire;37.1;urbain;non;oui;96078;1
+160;328786;6;2;oui;oui;moyen;sans emploi;aucun;20.4;urbain;oui;non;240500;1
+161;133038;11;4;oui;oui;précaire;stable;secondaire;8.1;rural;oui;non;104280;1
+162;344450;6;0;oui;oui;moderne;instable;universitaire;0.8;urbain;oui;oui;236601;0
+163;389031;10;0;oui;oui;précaire;instable;primaire;6.8;urbain;oui;non;436283;1
+164;151518;12;1;oui;non;précaire;stable;universitaire;19.4;rural;oui;non;115386;1
+165;365605;8;3;oui;oui;moyen;instable;primaire;21.4;rural;oui;non;211519;0
+166;299533;9;3;oui;oui;précaire;instable;aucun;8.6;rural;oui;oui;256778;0
+167;348647;8;2;oui;oui;précaire;instable;secondaire;29.1;rural;oui;non;356339;1
+168;477615;1;1;oui;oui;moderne;sans emploi;aucun;37.4;rural;oui;oui;495898;0
+169;220553;12;6;oui;non;moyen;sans emploi;primaire;3.7;rural;non;non;130808;1
+170;159551;2;0;non;oui;précaire;sans emploi;secondaire;30.4;rural;non;non;160088;1
+171;143258;7;3;oui;oui;précaire;sans emploi;secondaire;5.0;urbain;non;oui;148449;1
+172;152102;1;0;oui;oui;précaire;instable;secondaire;2.4;rural;non;oui;101001;0
+173;240747;1;0;oui;oui;moderne;instable;primaire;24.1;urbain;oui;oui;171227;0
+174;290938;11;3;oui;oui;moyen;instable;secondaire;7.4;urbain;oui;non;155017;0
+175;283202;11;6;oui;oui;moyen;stable;primaire;30.3;urbain;oui;non;201219;0
+176;349261;8;0;oui;non;moyen;stable;primaire;8.5;rural;oui;non;381739;0
+177;251560;12;3;oui;oui;moyen;stable;aucun;32.3;urbain;oui;non;163994;0
+178;424424;6;2;non;oui;moderne;sans emploi;aucun;40.0;urbain;oui;oui;391777;1
+179;218241;4;4;oui;oui;moyen;instable;primaire;14.7;urbain;non;non;231765;0
+180;576420;6;1;oui;oui;moyen;stable;aucun;10.8;rural;non;non;456700;0
+181;325080;6;1;oui;non;moyen;instable;secondaire;10.7;urbain;non;non;308561;1
+182;147141;3;2;oui;oui;moyen;sans emploi;primaire;25.9;rural;oui;oui;160779;1
+183;121492;11;0;oui;oui;moderne;stable;secondaire;0.9;rural;oui;oui;113289;0
+184;307896;10;7;oui;oui;moyen;stable;aucun;29.0;rural;oui;oui;262189;0
+185;223184;7;2;oui;oui;précaire;stable;primaire;32.7;rural;oui;oui;169873;0
+186;335680;10;3;non;oui;moyen;sans emploi;secondaire;34.4;urbain;non;oui;256957;1
+187;306788;1;0;oui;oui;moderne;instable;primaire;39.1;rural;non;non;350783;1
+188;241260;12;7;oui;non;moyen;stable;primaire;26.5;urbain;oui;non;123274;1
+189;148384;3;3;non;oui;moyen;instable;secondaire;27.2;urbain;oui;oui;151028;1
+190;68218;12;1;oui;non;précaire;stable;secondaire;14.0;rural;non;non;53052;1
+191;196418;1;1;oui;oui;précaire;instable;primaire;7.8;rural;oui;oui;204376;0
+192;352767;4;0;oui;oui;moyen;instable;secondaire;13.0;urbain;oui;oui;252506;0
+193;275691;5;0;oui;oui;moyen;instable;primaire;1.5;urbain;oui;oui;253258;0
+194;100511;7;0;oui;oui;précaire;sans emploi;universitaire;39.1;urbain;oui;oui;77042;1
+195;270781;5;2;oui;oui;moyen;stable;primaire;3.5;urbain;oui;oui;253863;0
+196;296238;4;3;oui;oui;moderne;stable;secondaire;32.3;rural;oui;oui;317221;0
+197;143937;10;2;oui;oui;moyen;instable;primaire;16.2;rural;oui;non;135737;1
+198;268447;4;2;oui;non;précaire;stable;secondaire;23.9;rural;oui;non;237594;1
+199;256985;8;3;oui;oui;moyen;sans emploi;secondaire;16.7;rural;oui;non;172029;1
+200;112843;12;6;oui;oui;moderne;instable;primaire;20.5;rural;non;non;99364;1
+201;292934;6;5;non;oui;moyen;stable;secondaire;26.5;rural;oui;non;155550;0
+202;317294;11;6;non;oui;moyen;stable;aucun;9.3;rural;non;non;311381;1
+203;379966;6;3;oui;oui;moyen;stable;universitaire;19.6;urbain;oui;non;212818;0
+204;376456;12;2;oui;oui;moyen;instable;primaire;4.4;rural;non;non;205929;1
+205;84679;12;1;oui;oui;précaire;sans emploi;universitaire;29.7;urbain;oui;non;61959;1
+206;137460;8;3;oui;oui;précaire;instable;primaire;29.6;urbain;non;oui;110062;1
+207;311804;4;1;oui;oui;moyen;instable;secondaire;21.7;urbain;oui;oui;180774;0
+208;311654;8;5;oui;oui;moyen;stable;secondaire;24.9;rural;non;non;220716;0
+209;311805;2;2;oui;oui;précaire;stable;secondaire;20.7;rural;oui;oui;239652;0
+210;712327;11;2;oui;oui;précaire;stable;primaire;2.6;urbain;oui;oui;424243;0
+211;318506;9;7;oui;oui;moyen;stable;primaire;22.8;rural;non;oui;166542;0
+212;386267;5;1;oui;oui;moyen;instable;primaire;23.1;urbain;oui;non;461058;0
+213;364480;1;1;oui;non;précaire;sans emploi;secondaire;12.3;rural;non;oui;271174;1
+214;328166;8;1;oui;oui;moderne;instable;primaire;28.6;rural;oui;oui;196067;0
+215;212167;4;0;oui;oui;moyen;stable;universitaire;12.1;urbain;oui;non;182482;0
+216;341076;2;0;non;non;moderne;sans emploi;universitaire;5.5;rural;non;oui;340385;1
+217;157260;11;6;oui;oui;précaire;stable;primaire;25.5;rural;non;oui;135389;1
+218;221581;6;3;non;oui;précaire;instable;secondaire;29.4;urbain;oui;non;166353;1
+219;191756;9;6;oui;oui;précaire;stable;secondaire;13.8;urbain;oui;non;161024;0
+220;259824;11;0;oui;oui;moderne;stable;universitaire;6.7;urbain;oui;non;207718;0
+221;527759;3;2;oui;non;précaire;instable;primaire;15.2;rural;non;oui;410300;1
+222;30000;12;3;oui;oui;précaire;stable;aucun;24.0;urbain;oui;oui;20000;1
+223;332351;2;1;oui;oui;précaire;stable;secondaire;4.6;urbain;oui;oui;255213;0
+224;56474;3;1;oui;oui;moyen;stable;primaire;8.9;rural;non;non;52591;1
+225;193368;4;0;non;oui;précaire;instable;primaire;17.5;urbain;non;oui;183938;1
+226;380674;10;4;oui;oui;moderne;instable;primaire;21.0;urbain;oui;non;269090;0
+227;257713;4;3;oui;oui;moyen;stable;universitaire;1.0;urbain;oui;oui;198641;0
+228;120670;7;5;oui;oui;moyen;sans emploi;aucun;23.7;rural;oui;oui;138264;1
+229;164163;7;4;oui;oui;moyen;instable;aucun;21.7;rural;oui;oui;117694;0
+230;331551;4;1;oui;oui;moyen;sans emploi;secondaire;3.1;rural;oui;non;362228;0
+231;162356;2;1;oui;oui;précaire;instable;secondaire;7.4;urbain;oui;oui;82467;0
+232;275975;6;4;oui;non;précaire;stable;secondaire;35.0;rural;non;oui;311831;1
+233;255468;7;4;oui;oui;moderne;instable;primaire;20.7;urbain;oui;non;157576;0
+234;171807;2;2;oui;oui;moyen;stable;universitaire;1.0;urbain;oui;oui;196574;0
+235;507273;1;1;oui;oui;moderne;stable;secondaire;23.1;urbain;oui;non;272339;0
+236;326070;9;0;non;oui;moyen;stable;secondaire;13.4;urbain;oui;oui;208837;0
+237;30000;5;5;oui;oui;moyen;instable;secondaire;8.2;rural;non;non;20147;1
+238;272374;7;0;oui;oui;moderne;sans emploi;universitaire;0.6;urbain;oui;non;274839;0
+239;170585;9;3;oui;non;moderne;stable;primaire;2.2;urbain;oui;non;134615;0
+240;352292;8;1;oui;oui;moyen;stable;secondaire;3.0;rural;oui;oui;248074;0
+241;154897;7;5;oui;oui;précaire;stable;secondaire;23.6;rural;oui;oui;127981;0
+242;236231;9;5;non;oui;précaire;stable;aucun;6.7;urbain;oui;non;233352;1
+243;310598;6;1;oui;oui;précaire;instable;secondaire;10.8;urbain;non;oui;243221;0
+244;353890;12;3;oui;oui;moyen;stable;aucun;31.3;rural;oui;oui;276178;0
+245;105964;11;1;oui;oui;moderne;stable;aucun;36.1;rural;oui;oui;120115;0
+246;209859;6;0;oui;oui;précaire;instable;secondaire;16.1;rural;oui;non;130315;0
+247;193006;3;2;oui;non;précaire;instable;primaire;12.2;urbain;oui;non;104741;1
+248;171600;3;3;oui;non;moyen;instable;secondaire;31.9;urbain;non;non;128936;1
+249;461854;8;5;non;oui;précaire;stable;primaire;9.2;rural;non;non;249869;1
+250;298597;9;5;oui;non;moderne;stable;secondaire;11.0;rural;non;non;160984;1
+251;98693;4;4;non;non;précaire;sans emploi;secondaire;7.5;rural;oui;non;97542;1
+252;360143;1;1;non;oui;moyen;stable;universitaire;35.3;rural;oui;oui;303710;0
+253;504658;4;4;oui;oui;précaire;sans emploi;primaire;5.7;urbain;non;non;550581;1
+254;373895;1;0;oui;non;moyen;sans emploi;universitaire;38.4;urbain;oui;non;290485;1
+255;67675;5;2;oui;oui;moderne;instable;universitaire;26.1;urbain;oui;non;66693;0
+256;191891;6;1;oui;non;précaire;instable;primaire;7.5;rural;oui;non;172890;1
+257;402029;10;0;oui;oui;moderne;instable;secondaire;4.6;rural;oui;oui;222910;0
+258;165079;6;1;oui;non;moderne;instable;secondaire;13.8;urbain;oui;oui;162639;0
+259;303258;2;2;oui;oui;moyen;sans emploi;universitaire;20.0;urbain;oui;non;173160;0
+260;342956;10;3;oui;oui;moderne;stable;primaire;38.1;rural;oui;oui;261613;0
+261;138768;9;1;oui;non;moderne;instable;primaire;26.3;rural;oui;oui;74586;1
+262;242856;4;3;oui;oui;moyen;stable;primaire;9.9;urbain;oui;non;264202;0
+263;30000;6;0;oui;oui;moyen;instable;primaire;1.5;urbain;oui;oui;20000;0
+264;127073;5;3;oui;non;précaire;instable;primaire;15.2;rural;oui;oui;67505;1
+265;219691;5;1;non;oui;précaire;instable;aucun;26.9;urbain;non;oui;226176;1
+266;100266;1;1;non;oui;moyen;sans emploi;primaire;35.3;urbain;oui;oui;113495;1
+267;445889;9;2;oui;non;précaire;sans emploi;universitaire;32.4;rural;oui;oui;531408;1
+268;78383;11;2;non;oui;moderne;sans emploi;aucun;15.8;urbain;oui;oui;54346;1
+269;197194;1;1;oui;oui;moyen;instable;universitaire;4.5;rural;oui;non;207058;0
+270;265688;6;3;oui;oui;moyen;instable;primaire;16.4;rural;oui;non;207556;0
+271;422952;6;5;oui;oui;moderne;sans emploi;aucun;32.8;urbain;oui;oui;357027;0
+272;77696;2;0;oui;non;moyen;sans emploi;primaire;17.0;rural;oui;oui;50344;1
+273;389579;12;7;oui;non;moderne;instable;primaire;12.8;rural;oui;oui;426942;0
+274;251227;1;0;oui;non;moderne;stable;primaire;36.8;rural;non;oui;270434;1
+275;132218;11;1;oui;oui;moyen;stable;universitaire;19.2;rural;oui;oui;143636;0
+276;305452;12;1;oui;oui;précaire;instable;universitaire;34.4;urbain;oui;non;210260;1
+277;273887;1;0;oui;oui;précaire;sans emploi;primaire;24.5;urbain;non;non;272944;1
+278;177973;7;5;oui;oui;précaire;instable;secondaire;23.6;urbain;oui;non;209392;1
+279;258376;9;4;oui;oui;précaire;sans emploi;secondaire;34.5;rural;oui;non;290585;1
+280;203762;3;1;non;non;moderne;instable;secondaire;27.4;urbain;non;non;244153;1
+281;263622;7;6;oui;oui;moyen;instable;primaire;29.2;urbain;oui;non;276652;0
+282;329455;11;5;oui;non;moderne;sans emploi;primaire;4.4;rural;oui;oui;351146;1
+283;440322;3;2;oui;oui;précaire;sans emploi;primaire;35.5;rural;oui;non;363103;1
+284;101462;1;0;oui;oui;précaire;instable;primaire;16.8;urbain;non;oui;121210;1
+285;505964;10;7;oui;non;précaire;stable;primaire;39.5;urbain;oui;oui;413087;1
+286;30000;3;1;oui;non;précaire;instable;secondaire;16.4;urbain;non;oui;20000;1
+287;231785;6;0;non;non;moyen;stable;aucun;29.5;urbain;oui;non;166529;1
+288;320598;9;4;oui;non;précaire;stable;secondaire;24.1;urbain;oui;non;383701;1
+289;283719;8;5;oui;oui;moderne;sans emploi;aucun;9.4;urbain;non;oui;146211;1
+290;175276;2;1;oui;non;précaire;instable;secondaire;25.1;rural;oui;oui;100902;1
+291;225025;1;0;oui;oui;moyen;instable;primaire;28.0;rural;oui;oui;216736;0
+292;190839;5;4;oui;oui;moderne;stable;secondaire;5.2;rural;oui;oui;121956;0
+293;179276;5;4;non;oui;moyen;stable;primaire;36.5;urbain;oui;non;119066;0
+294;351952;2;0;non;oui;précaire;stable;primaire;29.1;urbain;oui;oui;232926;1
+295;292841;5;2;oui;oui;précaire;stable;primaire;32.2;rural;oui;non;165894;0
+296;166850;1;0;non;oui;précaire;stable;primaire;25.1;rural;non;oui;178608;1
+297;357951;7;6;non;oui;précaire;sans emploi;secondaire;26.1;urbain;non;oui;353411;1
+298;286875;3;0;oui;oui;moderne;instable;primaire;15.5;urbain;oui;oui;280886;0
+299;347543;3;3;non;oui;moyen;stable;primaire;12.9;rural;non;non;360495;1
+300;325555;10;3;non;oui;précaire;instable;secondaire;4.3;rural;oui;oui;241569;1
+301;150520;7;2;non;oui;moderne;stable;secondaire;6.7;rural;non;non;166865;1
+302;182778;8;5;oui;non;précaire;stable;secondaire;16.4;urbain;oui;non;193906;1
+303;339675;8;7;oui;non;moyen;stable;primaire;1.9;urbain;oui;non;358101;0
+304;323244;11;4;non;oui;moyen;instable;primaire;33.1;rural;non;non;236737;1
+305;247491;10;7;oui;oui;moyen;stable;secondaire;0.6;rural;oui;non;262325;0
+306;264079;6;5;oui;non;moyen;sans emploi;secondaire;16.7;rural;oui;oui;154360;1
+307;403319;4;3;non;oui;précaire;instable;aucun;25.5;rural;oui;oui;453422;1
+308;179011;10;2;non;oui;moyen;instable;primaire;23.6;rural;non;non;203558;1
+309;315651;3;1;oui;oui;moyen;stable;universitaire;17.0;rural;oui;non;212675;0
+310;225736;6;2;oui;oui;moyen;instable;secondaire;12.3;urbain;non;non;225354;0
+311;223878;11;3;oui;oui;précaire;stable;secondaire;39.3;rural;oui;non;190906;0
+312;381853;6;5;oui;oui;moyen;instable;secondaire;17.0;rural;non;non;267354;0
+313;349049;1;0;oui;oui;moyen;stable;secondaire;6.9;rural;oui;oui;379614;0
+314;347621;5;1;oui;oui;moderne;stable;universitaire;29.7;rural;non;non;310387;0
+315;406657;12;4;oui;oui;précaire;stable;secondaire;27.6;urbain;non;oui;415021;1
+316;252520;8;3;non;oui;moyen;instable;primaire;24.3;urbain;non;non;178260;1
+317;331834;11;1;oui;oui;moyen;stable;primaire;22.5;urbain;oui;non;225153;0
+318;212767;12;2;oui;non;moyen;instable;secondaire;33.8;urbain;oui;non;188322;1
+319;288899;12;5;oui;non;moyen;instable;primaire;22.0;urbain;oui;oui;323098;1
+320;234382;6;2;oui;non;moyen;instable;secondaire;30.2;rural;oui;oui;173959;0
+321;261639;11;3;non;oui;précaire;sans emploi;universitaire;15.7;urbain;oui;oui;297728;1
+322;321418;6;4;non;oui;précaire;sans emploi;primaire;20.8;rural;non;oui;375864;1
+323;151813;1;0;oui;oui;précaire;instable;secondaire;8.6;rural;non;non;154691;1
+324;501086;2;2;oui;oui;moyen;stable;aucun;7.5;urbain;oui;oui;538734;0
+325;129277;7;6;oui;oui;précaire;stable;aucun;0.7;rural;non;oui;132142;1
+326;104297;2;1;non;oui;moyen;stable;aucun;30.7;urbain;oui;oui;100386;1
+327;388973;9;3;oui;oui;moyen;instable;universitaire;6.2;rural;oui;non;410954;0
+328;344999;6;0;oui;oui;précaire;stable;secondaire;21.7;rural;non;oui;353212;0
+329;324894;6;1;oui;oui;moyen;stable;primaire;33.5;rural;oui;oui;344310;0
+330;325401;9;7;oui;oui;moyen;stable;primaire;23.4;rural;non;oui;315608;0
+331;248530;5;4;oui;oui;moyen;stable;secondaire;27.9;urbain;oui;non;264781;0
+332;142329;3;0;oui;non;moyen;instable;primaire;14.7;rural;oui;oui;118982;1
+333;259096;5;3;oui;oui;moyen;sans emploi;universitaire;6.0;urbain;oui;oui;290300;0
+334;168740;2;0;non;oui;moderne;instable;secondaire;8.9;urbain;oui;oui;189965;0
+335;367014;11;2;oui;oui;moyen;instable;primaire;18.9;rural;oui;oui;312518;0
+336;232353;10;2;oui;oui;précaire;instable;secondaire;35.0;rural;oui;non;268930;1
+337;150940;8;3;oui;oui;précaire;stable;universitaire;14.8;urbain;oui;non;80376;0
+338;211433;6;0;oui;oui;moderne;sans emploi;primaire;22.0;rural;oui;non;159781;1
+339;299551;2;2;oui;non;précaire;stable;secondaire;14.1;rural;non;non;151158;1
+340;182353;8;2;oui;oui;précaire;stable;primaire;24.3;rural;non;non;144100;1
+341;151333;2;1;oui;oui;moyen;instable;primaire;10.1;urbain;oui;non;89938;0
+342;279242;10;2;oui;oui;précaire;sans emploi;secondaire;22.8;rural;oui;non;268971;1
+343;279395;2;0;oui;non;moderne;stable;secondaire;24.2;urbain;non;non;175269;1
+344;189166;5;1;oui;oui;moyen;instable;primaire;15.7;rural;oui;oui;208406;0
+345;193475;7;2;oui;oui;moderne;instable;universitaire;21.5;rural;non;oui;186040;0
+346;277845;9;0;non;non;moyen;instable;primaire;2.2;rural;oui;oui;294963;1
+347;76229;7;5;oui;oui;moyen;instable;aucun;5.8;rural;oui;oui;83953;0
+348;81104;9;6;oui;oui;moyen;stable;primaire;21.0;urbain;oui;oui;86213;0
+349;163786;2;0;oui;oui;précaire;instable;secondaire;24.7;urbain;non;oui;105246;1
+350;224386;9;7;oui;oui;moyen;sans emploi;secondaire;31.1;rural;oui;oui;247875;0
+351;287308;4;3;oui;non;précaire;instable;secondaire;32.1;urbain;oui;non;154122;1
+352;427042;11;0;non;non;moyen;instable;aucun;10.9;urbain;oui;non;430093;1
+353;352919;7;4;oui;oui;moderne;sans emploi;secondaire;17.8;rural;oui;non;375060;1
+354;230807;1;0;oui;oui;précaire;instable;universitaire;3.9;urbain;oui;oui;223597;0
+355;247718;4;4;oui;oui;moderne;instable;secondaire;22.6;urbain;oui;oui;265271;0
+356;129696;4;3;non;oui;précaire;stable;aucun;3.4;urbain;oui;non;137744;1
+357;247778;9;4;oui;non;moyen;instable;secondaire;38.5;rural;oui;non;225670;1
+358;215360;2;1;oui;oui;moderne;instable;primaire;13.0;urbain;non;non;109145;0
+359;288726;4;2;oui;oui;moderne;stable;universitaire;19.3;rural;oui;non;198745;0
+360;150732;11;3;oui;oui;moyen;sans emploi;primaire;8.5;rural;oui;non;91825;1
+361;312321;2;2;non;oui;précaire;sans emploi;universitaire;34.0;urbain;oui;oui;352511;1
+362;433928;10;4;oui;non;moderne;stable;primaire;23.3;rural;oui;non;362253;1
+363;236948;9;5;oui;oui;précaire;sans emploi;secondaire;18.7;rural;oui;oui;153430;1
+364;298205;6;2;oui;oui;moyen;stable;primaire;24.7;rural;oui;non;193049;0
+365;332817;6;2;non;oui;précaire;stable;secondaire;9.5;rural;oui;oui;221344;0
+366;201853;7;3;oui;non;précaire;sans emploi;primaire;20.2;urbain;non;non;173978;1
+367;276891;8;4;oui;non;précaire;stable;primaire;9.0;rural;oui;non;157111;1
+368;251511;5;2;oui;oui;moderne;stable;primaire;14.4;rural;oui;non;227315;0
+369;261721;9;2;non;oui;précaire;instable;secondaire;18.2;rural;oui;non;215822;1
+370;157238;3;2;oui;oui;moyen;sans emploi;aucun;14.1;rural;oui;non;156813;0
+371;252941;7;4;non;non;moderne;instable;primaire;18.3;rural;oui;non;148609;1
+372;309759;5;5;oui;oui;précaire;stable;aucun;35.2;urbain;oui;oui;240964;0
+373;424137;2;0;oui;oui;moyen;sans emploi;primaire;10.3;rural;oui;non;251044;0
+374;365112;1;0;oui;non;précaire;instable;universitaire;21.9;rural;oui;oui;430350;1
+375;508381;3;3;oui;oui;moyen;instable;secondaire;12.7;rural;oui;non;540559;0
+376;157918;6;3;oui;oui;précaire;sans emploi;secondaire;14.1;urbain;oui;oui;180889;0
+377;354678;8;4;oui;oui;précaire;stable;aucun;15.3;rural;oui;non;275345;1
+378;272001;12;6;non;oui;précaire;instable;primaire;32.1;urbain;oui;non;187763;1
+379;512776;9;4;oui;non;précaire;stable;secondaire;24.9;rural;oui;non;323793;1
+380;153004;1;0;oui;oui;précaire;instable;secondaire;9.7;urbain;oui;non;113121;0
+381;149233;8;5;oui;non;précaire;sans emploi;universitaire;2.7;urbain;non;oui;123729;1
+382;178072;5;3;non;oui;moyen;stable;secondaire;18.0;urbain;non;oui;146479;0
+383;30000;9;3;oui;oui;précaire;stable;secondaire;2.2;rural;non;non;20319;1
+384;186909;4;2;non;non;précaire;stable;secondaire;13.3;rural;oui;oui;109109;1
+385;158904;1;0;oui;oui;moyen;stable;secondaire;10.3;rural;oui;non;117095;0
+386;268047;11;0;oui;oui;moyen;instable;aucun;9.7;rural;non;non;276004;1
+387;291010;8;3;oui;oui;moyen;stable;aucun;28.4;rural;oui;non;245340;0
+388;475140;9;5;oui;oui;moderne;instable;universitaire;6.8;rural;oui;oui;510106;0
+389;364050;8;0;oui;oui;moyen;sans emploi;secondaire;14.9;rural;oui;oui;198166;0
+390;180771;7;3;oui;oui;moyen;instable;primaire;25.8;rural;oui;non;98823;0
+391;142190;3;1;non;oui;moyen;stable;secondaire;33.5;rural;oui;non;140898;1
+392;309030;6;1;oui;oui;moderne;stable;primaire;35.6;urbain;oui;non;167645;0
+393;91572;7;5;oui;oui;moyen;instable;secondaire;33.5;rural;oui;oui;79085;0
+394;469775;4;4;oui;oui;moyen;instable;universitaire;22.6;urbain;oui;non;486874;0
+395;391532;11;7;oui;oui;précaire;instable;primaire;20.4;rural;oui;non;360186;1
+396;193698;6;4;non;oui;précaire;instable;primaire;29.2;rural;oui;non;125855;1
+397;44423;12;4;oui;oui;moderne;stable;aucun;11.7;rural;oui;oui;49897;0
+398;412464;4;1;non;oui;moderne;instable;primaire;22.4;urbain;oui;non;250901;1
+399;236255;6;1;oui;oui;moyen;stable;secondaire;4.1;urbain;oui;non;239559;0
+400;398537;8;2;oui;non;moyen;sans emploi;aucun;25.9;rural;oui;non;305710;1
+401;58668;6;2;non;oui;moderne;stable;secondaire;30.0;rural;non;non;55366;1
+402;178074;1;1;oui;oui;moyen;stable;secondaire;6.6;rural;oui;non;210078;0
+403;250629;10;1;oui;oui;précaire;stable;aucun;23.1;rural;oui;oui;140240;0
+404;255637;12;2;oui;oui;précaire;stable;secondaire;22.7;rural;non;non;171179;1
+405;195992;7;5;oui;oui;précaire;stable;primaire;8.0;urbain;oui;non;203591;0
+406;324741;6;4;non;non;moyen;stable;universitaire;9.7;urbain;oui;oui;327969;0
+407;121885;12;0;oui;oui;précaire;sans emploi;primaire;14.1;urbain;non;oui;101144;1
+408;232914;12;3;oui;oui;précaire;instable;secondaire;6.1;urbain;oui;oui;211510;0
+409;264435;1;1;oui;oui;moyen;instable;aucun;26.4;rural;oui;oui;182438;0
+410;311732;11;5;non;oui;moderne;instable;primaire;15.5;rural;non;oui;224702;1
+411;335393;9;1;oui;oui;moyen;sans emploi;aucun;10.3;rural;oui;oui;260056;0
+412;115042;6;5;oui;oui;précaire;sans emploi;primaire;32.6;urbain;oui;non;129224;1
+413;65906;1;1;oui;oui;précaire;stable;secondaire;21.1;rural;oui;non;64625;1
+414;403321;10;2;oui;oui;moyen;stable;aucun;26.3;urbain;oui;non;258777;0
+415;289877;12;2;oui;non;moyen;instable;secondaire;6.7;urbain;oui;non;290922;0
+416;160181;3;0;oui;non;moyen;stable;primaire;37.4;urbain;non;non;110790;1
+417;436138;2;0;oui;non;moyen;stable;secondaire;9.6;rural;oui;non;327750;0
+418;263880;8;2;oui;oui;moyen;stable;universitaire;19.9;rural;oui;oui;137893;0
+419;391515;1;1;non;oui;moyen;stable;primaire;7.5;rural;non;oui;364869;0
+420;258102;8;3;oui;non;moyen;sans emploi;secondaire;16.1;rural;non;non;225919;1
+421;497289;12;0;oui;oui;moderne;stable;universitaire;21.0;rural;oui;non;442781;0
+422;460640;11;0;oui;oui;moderne;instable;primaire;7.1;rural;oui;non;452793;0
+423;220124;8;7;oui;oui;précaire;instable;universitaire;22.1;rural;oui;oui;113900;0
+424;366588;12;3;non;oui;précaire;instable;secondaire;7.0;rural;non;oui;364519;1
+425;327445;2;2;oui;oui;moderne;instable;primaire;22.2;rural;oui;oui;240552;0
+426;414235;3;1;non;oui;moyen;stable;primaire;30.9;rural;oui;non;241203;0
+427;134209;4;0;oui;oui;moyen;sans emploi;primaire;0.7;urbain;non;oui;122425;1
+428;332326;7;7;oui;oui;précaire;instable;secondaire;22.5;rural;non;oui;200651;1
+429;377010;1;0;non;oui;moderne;stable;universitaire;2.4;rural;oui;oui;365874;0
+430;38951;12;2;non;oui;précaire;stable;secondaire;13.3;rural;non;non;40154;1
+431;108008;2;1;oui;oui;moderne;stable;primaire;8.8;rural;oui;oui;97202;0
+432;30000;9;1;oui;oui;moderne;sans emploi;primaire;24.5;rural;oui;non;35895;1
+433;217671;3;3;oui;oui;moyen;stable;secondaire;28.5;urbain;non;oui;112490;0
+434;336105;2;2;non;non;moderne;stable;primaire;22.6;rural;oui;oui;215386;1
+435;430282;2;1;oui;oui;moyen;stable;primaire;16.1;urbain;oui;non;465750;0
+436;258891;6;5;oui;oui;précaire;stable;primaire;18.7;urbain;non;non;213256;1
+437;445433;12;0;non;oui;moyen;stable;primaire;8.7;rural;oui;non;499606;0
+438;84387;3;2;non;oui;précaire;instable;primaire;24.4;urbain;oui;oui;88407;1
+439;45594;6;5;oui;oui;moyen;stable;primaire;38.1;urbain;oui;oui;26378;0
+440;243334;4;0;oui;oui;moyen;instable;primaire;37.0;rural;non;non;253766;1
+441;296087;2;2;oui;oui;moyen;instable;secondaire;21.1;urbain;oui;non;290442;0
+442;246076;2;1;oui;oui;moyen;instable;primaire;23.3;rural;oui;non;178310;0
+443;30000;5;4;oui;oui;précaire;stable;primaire;1.1;urbain;oui;non;20000;1
+444;239305;6;2;oui;oui;précaire;stable;aucun;24.7;urbain;oui;oui;141441;0
+445;93463;11;0;oui;oui;moyen;stable;secondaire;23.9;rural;non;non;87053;1
+446;330360;4;4;oui;non;moyen;instable;aucun;32.2;urbain;oui;oui;236958;0
+447;293991;8;7;oui;oui;moderne;instable;universitaire;16.0;rural;oui;non;309321;0
+448;137214;8;7;oui;oui;précaire;instable;primaire;30.8;rural;oui;oui;78493;1
+449;188335;2;1;oui;oui;précaire;instable;secondaire;9.9;rural;oui;oui;157761;0
+450;122894;4;4;oui;non;moyen;stable;secondaire;7.3;urbain;oui;non;122689;0
+451;242478;2;2;oui;oui;précaire;stable;primaire;16.5;rural;oui;non;222469;0
+452;364617;6;3;oui;oui;précaire;stable;secondaire;30.3;rural;non;non;350986;1
+453;131712;5;3;oui;oui;précaire;sans emploi;primaire;31.9;rural;oui;non;152216;1
+454;310485;6;0;oui;oui;moyen;sans emploi;universitaire;3.0;rural;non;non;155425;1
+455;186369;6;0;non;non;précaire;instable;primaire;13.1;rural;oui;oui;164299;1
+456;154855;8;2;oui;oui;moderne;sans emploi;primaire;39.9;rural;oui;oui;85204;1
+457;237156;12;7;oui;non;précaire;stable;secondaire;34.5;urbain;non;non;273018;1
+458;125770;8;6;oui;oui;précaire;stable;secondaire;23.3;rural;non;oui;107056;1
+459;183562;9;5;oui;oui;moyen;stable;secondaire;38.5;urbain;oui;non;159420;0
+460;106254;5;3;oui;oui;moyen;stable;secondaire;26.7;rural;oui;non;93231;0
+461;485767;10;0;non;oui;précaire;instable;universitaire;23.2;rural;oui;oui;575358;1
+462;254231;3;0;oui;oui;précaire;instable;primaire;25.4;urbain;oui;non;243915;1
+463;166032;12;0;oui;oui;moyen;sans emploi;primaire;5.7;urbain;oui;non;84666;1
+464;275677;3;1;oui;oui;précaire;instable;primaire;7.6;urbain;oui;oui;327738;0
+465;236520;10;2;non;non;moyen;stable;secondaire;29.2;rural;oui;non;257637;1
+466;223483;5;0;oui;oui;moyen;instable;universitaire;36.9;urbain;oui;non;172763;0
+467;323700;9;6;oui;non;moyen;instable;universitaire;27.5;urbain;oui;non;306283;1
+468;340900;7;4;oui;oui;précaire;instable;primaire;31.0;rural;non;non;310937;1
+469;186339;6;5;oui;oui;moyen;instable;secondaire;1.0;urbain;oui;oui;151336;0
+470;180901;5;2;oui;oui;précaire;sans emploi;secondaire;33.5;urbain;non;non;180114;1
+471;216993;10;2;oui;non;moyen;sans emploi;primaire;4.9;urbain;oui;oui;208819;1
+472;30000;8;4;oui;oui;moyen;instable;primaire;31.3;urbain;oui;oui;23160;1
+473;68177;5;2;oui;oui;moderne;stable;primaire;26.0;rural;oui;non;54669;0
+474;414024;2;1;oui;oui;précaire;instable;primaire;18.1;rural;non;oui;392591;1
+475;447396;11;6;oui;oui;moderne;instable;primaire;37.6;rural;oui;oui;488034;0
+476;220115;2;2;oui;oui;moyen;instable;aucun;21.6;rural;non;oui;156717;0
+477;319186;11;1;oui;non;précaire;sans emploi;secondaire;12.0;urbain;oui;non;375764;1
+478;287350;5;5;oui;oui;moyen;instable;universitaire;17.8;rural;oui;oui;148776;0
+479;619465;4;3;oui;non;moyen;instable;universitaire;32.6;rural;non;oui;456855;1
+480;384348;12;0;oui;oui;moyen;instable;universitaire;34.9;urbain;oui;non;254857;0
+481;234649;12;2;oui;oui;moderne;instable;primaire;26.1;urbain;oui;non;265919;0
+482;135335;2;1;oui;non;précaire;sans emploi;aucun;24.0;rural;oui;oui;86864;1
+483;57226;12;6;oui;non;moyen;stable;secondaire;31.8;urbain;non;non;42052;1
+484;274415;3;3;oui;oui;précaire;stable;secondaire;5.8;urbain;non;non;209458;0
+485;159237;8;1;oui;oui;précaire;instable;universitaire;16.9;urbain;non;non;156792;1
+486;79329;11;4;oui;oui;moderne;instable;aucun;7.6;urbain;oui;non;74492;1
+487;172411;6;3;oui;oui;précaire;instable;aucun;14.8;rural;non;non;112669;1
+488;120214;11;3;oui;oui;moyen;instable;universitaire;19.2;rural;oui;non;63735;1
+489;452456;5;1;oui;oui;moderne;instable;aucun;29.7;rural;non;oui;475008;0
+490;355796;2;0;non;oui;moyen;stable;primaire;27.2;rural;oui;non;259123;0
+491;249043;12;6;non;oui;précaire;instable;primaire;35.7;urbain;oui;non;203840;1
+492;427593;3;3;oui;oui;moderne;stable;aucun;27.8;urbain;oui;oui;468708;0
+493;259284;3;2;oui;oui;précaire;instable;universitaire;36.3;rural;oui;non;171332;0
+494;146645;9;7;non;oui;moyen;instable;aucun;17.4;urbain;non;oui;117898;1
+495;432774;10;2;non;non;moyen;stable;universitaire;29.5;urbain;oui;oui;335843;1
+496;314669;12;1;oui;oui;moyen;stable;secondaire;38.0;rural;oui;oui;299989;0
+497;125530;8;4;oui;oui;moyen;instable;universitaire;18.8;urbain;oui;non;79016;1
+498;227159;11;7;oui;oui;moyen;stable;secondaire;21.5;rural;oui;non;224578;0
+499;144925;10;3;oui;oui;moderne;instable;aucun;37.8;rural;oui;non;83719;1
+500;84064;10;0;oui;oui;moyen;stable;secondaire;8.6;urbain;non;oui;48714;0
