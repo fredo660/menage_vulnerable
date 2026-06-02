@@ -34,8 +34,8 @@
      --radius-md: 12px;
      --radius-lg: 20px;
    
-     --font-display: 'Syne', sans-serif;
-     --font-mono: 'IBM Plex Mono', monospace;
+     --mono:      'Courier New', 'Courier', monospace;
+     --display:   'Times New Roman', 'Times', serif;
      --font-body: 'Libre Franklin', sans-serif;
    
      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -97,14 +97,7 @@
      top: 50%; left: 60%;
    }
    
-   .bg-grid {
-     position: absolute;
-     inset: 0;
-     background-image:
-       linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-       linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-     background-size: 48px 48px;
-   }
+  
    
    /* ======================== LAYOUT ======================== */
    .app-container {
@@ -1219,3 +1212,4 @@
    
    /* ======================== SELECTION ======================== */
    ::selection { background: var(--accent-dim); color: var(--accent); }
+   
