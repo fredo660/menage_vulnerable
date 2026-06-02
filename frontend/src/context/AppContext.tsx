@@ -1,9 +1,4 @@
-/**
- * context/AppContext.tsx — Version avec Landing page
- * Flux : Landing → (bouton Commencer) → Auth → App
- *                                            ↑
- *                                  (déjà connecté) → App directement
- */
+
 import React, {
     createContext, useContext, useEffect,
     useState, useCallback, type ReactNode,

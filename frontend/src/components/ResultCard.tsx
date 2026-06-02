@@ -21,7 +21,7 @@ const RISK_FACTORS: { key: keyof MenageInput; label: string; criticalFn: (v: num
 ];
 
 const LABEL_NAMES: Record<string, string> = {
-  faible: "Faible",
+  "faible": "Faible",
   "modérée": "Modérée",
   "élevée": "Élevée",
 };

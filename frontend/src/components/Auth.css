@@ -7,15 +7,16 @@
   --bg2:#0e1525;
   --card:rgba(14,21,37,0.78);
 
-  --border:rgba(255,255,255,0.08);
-  --border-strong:rgba(255,255,255,0.14);
+  /* Violet */
+  --border:rgba(168, 85, 247, 0.45);
+  --border-strong:rgba(192, 132, 252, 0.25);
 
   --text:#f5f7fb;
-  --text-soft:#a9b3c7;
-  --text-muted:#74809a;
+  --text-soft:#c4b5fd;
+  --text-muted:#a78bfa;
 
-  --primary:#4f8cff;
-  --primary-soft:rgba(79,140,255,0.18);
+  --primary:#7b2ff7;
+  --primary-soft:rgba(123,47,247,0.18);
 
   --success:#22c55e;
   --danger:#ef4444;
@@ -32,7 +33,6 @@
   --font-main:'Inter', sans-serif;
   --font-mono:'JetBrains Mono', monospace;
 }
-
 /* ───────────────────────────────────────────── */
 
 *{
@@ -122,71 +122,51 @@
   color:var(--text);
 }
 
-/* ─────────────────────────────────────────────
-   TABS
-───────────────────────────────────────────── */
+/* ───────── Tabs ───────── */
 
-.auth-tabs{
-  position:relative;
-
-  display:grid;
-  grid-template-columns:1fr 1fr;
-
-  background:rgba(141, 7, 146, 0.04);
-
-  border:1px solid var(--border);
-  border-radius:16px;
-
-  padding:6px;
-
-  margin-bottom:30px;
+.auth-tabs {
+  position: relative;
+  display: flex;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 4px;
+  margin-bottom: 28px;
 }
 
-.auth-tab{
-  position:relative;
-  z-index:2;
-
-  height:46px;
-
-  border:none;
-  background:transparent;
-  
-  color:var(--text-soft);
-
-  font-size:14px;
-  font-weight:600;
-
-  border-radius:12px;
-
-  cursor:pointer;
-  transition:var(--transition);
+.auth-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #cdd3ea;
+  font-size: 15px;
+  padding: 12px;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.auth-tab.active{
-  color:rgb(255, 255, 255);
+.auth-tab.active {
+  color: white;
+  font-weight: bold;
 }
 
-.auth-tab-slider{
-  position:absolute;
-  top:6px;
-  width:calc(50% - 6px);
-  height:46px;
-
-  background:linear-gradient(135deg,#380235,#6e024e);
-
-  border-radius:12px;
-
-  transition:var(--transition);
+.auth-tab-slider {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: calc(50% - 4px);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00d4ff, #7b61ff);
+  transition: 0.35s ease;
 }
 
-.auth-tab-slider.left{
-  left:6px;
+.auth-tab-slider.left {
+  left: 4px;
 }
 
-.auth-tab-slider.right{
-  left:calc(50%);
+.auth-tab-slider.right {
+  left: calc(50%);
 }
-
 /* ─────────────────────────────────────────────
    HEADINGS
 ───────────────────────────────────────────── */

@@ -1,10 +1,4 @@
-/**
- * App.tsx — Coquille de navigation pure
- * Lit useAppContext() pour décider quelle vue afficher :
- *   "landing" → <LandingPage>
- *   "auth"    → <Auth>
- *   "app"     → Dashboard complet (header + tabs + pages)
- */
+
 import React, { Suspense, lazy } from "react";
 import { useAppContext, type TabType } from "./context/AppContext";
 import Header      from "./components/Header";
@@ -107,21 +101,11 @@ const App: React.FC = () => {
         <div className="bg-decoration" aria-hidden>
           <div className="bg-circle bg-circle-1"/>
           <div className="bg-circle bg-circle-2"/>
-          <div className="bg-grid"/>
+          
         </div>
         <div className="app-container" style={{ display:"flex", alignItems:"center", justifyContent:"center", minHeight:"100vh" }}>
           {/* Bouton retour landing */}
-          <button
-            onClick={() => {/* setAppView via contexte — on passe par signOut flow */}}
-            style={{
-              position:"absolute", top:24, left:24,
-              background:"transparent", border:"1px solid rgba(255,255,255,0.1)",
-              borderRadius:8, padding:"8px 16px", color:"var(--text-muted)",
-              fontFamily:"var(--font-mono)", fontSize:12, cursor:"pointer",
-            }}
-          >
-            ← Retour
-          </button>
+         
           <Auth onSuccess={() => {}} />
         </div>
       </div>
