@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import type { MenageInput, PredictionResult } from "../types";
 
-const API = "http://localhost:8000/api";
+const API =
+  `${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api`;
 
 interface LDAPoint {
   x: number; y: number; ld1: number;

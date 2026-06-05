@@ -4,7 +4,8 @@ import {
   Tooltip, ResponsiveContainer, Cell,
 } from "recharts";
 
-const API = "http://localhost:8000/api";
+const API =
+  `${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api`;
 
 // ── Types ─────────────────────────────────────────────────────
 interface DistItem { classe:number; label:string; count:number; pourcentage:number; color:string; }

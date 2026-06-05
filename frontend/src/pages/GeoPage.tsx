@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 
-const API = "http://localhost:8000/api";
+const API =
+  `${import.meta.env.VITE_API_URL || "http://localhost:8000"}/api`;
 
 // ── Centres urbains officiels Madagascar ──────────────────────
 // Source: coordonnées GPS réelles des chefs-lieux de région
