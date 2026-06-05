@@ -9,7 +9,7 @@ import Auth        from "./components/Auth";
 import LandingPage from "./components/Landing";
 import type { MenageInput, PredictionResult, HistoryEntry, StatsData } from "./types";
 import "./App.css";
-import "./extensions.css";
+import "./Extensions.css";
 import "./components/Landing.css";
 
 const EDAPage   = lazy(() => import("./pages/EDAPage"));
