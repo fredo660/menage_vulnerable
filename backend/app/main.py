@@ -13,13 +13,24 @@ from app.api.lda_projection import router as lda_router
 from app.api.geo            import router as geo_router
 from app.api.batch          import router as batch_router
 from app.services.model_service import load_model
-
+from dotenv import load_dotenv
+import os
+FRONTEND_URL = os.getenv("FRONTEND_URL")
+load_dotenv()
 app = FastAPI(title="Ménages Vulnérables API", version="2.0")
 
 # ── CORS — DOIT être avant include_router ─────────────────────
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+if FRONTEND_URL:
+    origins.append(FRONTEND_URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
