@@ -1,5 +1,11 @@
 import { useState, useCallback } from "react";
-import type { MenageInput, PredictionResult, HistoryEntry, StatsData } from "../types";
+import type {
+  MenageInput,
+  PredictionResult,
+  HistoryEntry,
+  StatsData
+} from "../types";
+
 import { predictVulnerabilite } from "../services/api";
 
 export function usePrediction() {
@@ -8,14 +14,22 @@ export function usePrediction() {
   const [error, setError] = useState<string | null>(null);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
 
+  // ─────────────────────────────────────────────
+  // PREDICTION
+  // ─────────────────────────────────────────────
   const predict = useCallback(async (data: MenageInput) => {
     setLoading(true);
     setError(null);
     setResult(null);
 
-
     try {
       const prediction = await predictVulnerabilite(data);
+
+      // sécurité API
+      if (!prediction || typeof prediction !== "object") {
+        throw new Error("Réponse API invalide");
+      }
+
       setResult(prediction);
 
       const entry: HistoryEntry = {
@@ -24,6 +38,7 @@ export function usePrediction() {
         input: data,
         result: prediction,
       };
+
       setHistory((prev) => [entry, ...prev].slice(0, 20));
 
       return prediction;
@@ -36,17 +51,55 @@ export function usePrediction() {
     }
   }, []);
 
+  // ─────────────────────────────────────────────
+  // STATS (SAFE VERSION)
+  // ─────────────────────────────────────────────
   const stats: StatsData = {
     total: history.length,
-    faible: history.filter((h) => h.result.label === "faible").length,
-    moderee: history.filter((h) => h.result.label === "modérée").length,
-    elevee: history.filter((h) => h.result.label === "élevée").length,
+
+    faible: history.filter(
+      (h) => h.result?.label === "faible"
+    ).length,
+
+    moderee: history.filter(
+      (h) => h.result?.label === "modérée"
+    ).length,
+
+    elevee: history.filter(
+      (h) => h.result?.label === "élevée"
+    ).length,
   };
 
-  const clearHistory = useCallback(() => setHistory([]), []);
+  // ─────────────────────────────────────────────
+  // CLEAR HISTORY
+  // ─────────────────────────────────────────────
+  const clearHistory = useCallback(() => {
+    setHistory([]);
+  }, []);
 
+  // ─────────────────────────────────────────────
+  // LOAD HISTORY (FROM BACKEND / SUPABASE)
+  // ─────────────────────────────────────────────
   const loadHistory = useCallback((data: HistoryEntry[]) => {
+    if (!Array.isArray(data)) {
+      console.warn("Historique invalide");
+      return;
+    }
+
     setHistory(data);
   }, []);
-  return { loading, result, error, history, stats, predict, clearHistory,  loadHistory };
+
+  // ─────────────────────────────────────────────
+  // RETURN
+  // ─────────────────────────────────────────────
+  return {
+    loading,
+    result,
+    error,
+    history,
+    stats,
+    predict,
+    clearHistory,
+    loadHistory,
+  };
 }
