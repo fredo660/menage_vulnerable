@@ -52,24 +52,30 @@ def root():
 def save_data(data: dict):
     try:
         safe = {
-            "revenu_mensuel": data.get("revenu_mensuel"),
-            "taille_menage": data.get("taille_menage"),
-            "nb_enfants": data.get("nb_enfants"),
-            "acces_eau": data.get("acces_eau"),
-            "electricite": data.get("electricite"),
-            "type_logement": data.get("type_logement"),
-            "emploi_chef": data.get("emploi_chef"),
-            "niveau_etude": data.get("niveau_etude"),
-            "distance_centre_sante_km": data.get("distance_centre_sante_km"),
-            "zone": data.get("zone"),
-            "alimentation_suffisante": data.get("alimentation_suffisante"),
-            "acces_internet": data.get("acces_internet"),
-            "depenses_mensuelles": data.get("depenses_mensuelles"),
+    "revenu_mensuel": int(data.get("revenu_mensuel") or 0),
+    "taille_menage": int(data.get("taille_menage") or 0),
+    "nb_enfants": int(data.get("nb_enfants") or 0),
 
-            "prediction": data.get("prediction"),
-            "probabilite": data.get("probabilite"),
-            "user_id": data.get("user_id"),
-        }
+    "acces_eau": bool(data.get("acces_eau")),
+    "electricite": bool(data.get("electricite")),
+    
+    "type_logement": data.get("type_logement"),
+    "emploi_chef": data.get("emploi_chef"),
+    "niveau_etude": data.get("niveau_etude"),
+
+    "distance_centre_sante_km": float(data.get("distance_centre_sante_km") or 0),
+    "zone": data.get("zone"),
+
+    "alimentation_suffisante": bool(data.get("alimentation_suffisante")),
+    "acces_internet": bool(data.get("acces_internet")),
+
+    "depenses_mensuelles": int(data.get("depenses_mensuelles") or 0),
+
+    "prediction": data.get("prediction"),
+    "probabilite": float(data.get("probabilite") or 0),
+
+    "user_id": data.get("user_id"),
+}
 
         response = supabase.table("predictions").insert(safe).execute()
 

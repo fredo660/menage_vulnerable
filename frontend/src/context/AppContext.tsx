@@ -126,7 +126,7 @@ import React, {
       try {
         await saveToSupabase({
           ...lastInput,
-          prediction: result.label,
+          prediction: result.prediction, // ❗ numéro (0/1/2)
           probabilite: result.score,
           user_id: session.user.id
         });
