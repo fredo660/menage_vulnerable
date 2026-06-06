@@ -126,7 +126,8 @@ import React, {
       try {
         await saveToSupabase({
           ...lastInput,
-          vulnerabilite: result.prediction,
+          prediction: result.label,
+          probabilite: result.score,
           user_id: session.user.id
         });
     
