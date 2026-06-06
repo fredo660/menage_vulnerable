@@ -13,6 +13,15 @@ const LABEL_NAMES: Record<string, string> = {
   "élevée": "Élevée",
 };
 
+const getColor = (label: string) => {
+  switch (label) {
+    case "faible": return "#22c55e";
+    case "modérée": return "#f59e0b";
+    case "élevée": return "#ef4444";
+    default: return "#8b92a8";
+  }
+};
+
 const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) => {
   return (
     <div className="history-panel">
@@ -94,7 +103,7 @@ const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) 
               <div className="history-item-left">
                 <span
                   className="history-dot"
-                  style={{ background: entry.result.color }}
+                  style={{ background: getColor(entry.result.label) }}
                 />
                 <div>
                   <p className="history-label">
