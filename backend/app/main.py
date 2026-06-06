@@ -48,18 +48,40 @@ def startup():
 @app.get("/")
 def root():
     return {"message": "API ménages vulnérables", "version": "2.0", "status": "ok"}
-
 @app.post("/api/save")
 def save_data(data: dict):
     try:
-        response = supabase.table("predictions").insert(data).execute()
-        if response.data is None:
-            raise HTTPException(status_code=400, detail="Insertion échouée")
-        return {"message": "Données enregistrées", "data": response.data}
+        safe = {
+            "revenu_mensuel": data.get("revenu_mensuel"),
+            "taille_menage": data.get("taille_menage"),
+            "nb_enfants": data.get("nb_enfants"),
+            "acces_eau": data.get("acces_eau"),
+            "electricite": data.get("electricite"),
+            "type_logement": data.get("type_logement"),
+            "emploi_chef": data.get("emploi_chef"),
+            "niveau_etude": data.get("niveau_etude"),
+            "distance_centre_sante_km": data.get("distance_centre_sante_km"),
+            "zone": data.get("zone"),
+            "alimentation_suffisante": data.get("alimentation_suffisante"),
+            "acces_internet": data.get("acces_internet"),
+            "depenses_mensuelles": data.get("depenses_mensuelles"),
+
+            "prediction": data.get("prediction"),
+            "probabilite": data.get("probabilite"),
+            "user_id": data.get("user_id"),
+        }
+
+        response = supabase.table("predictions").insert(safe).execute()
+
+        return {
+            "message": "OK",
+            "data": response.data
+        }
+
     except Exception as e:
+        print("SAVE ERROR:", str(e))
         raise HTTPException(status_code=500, detail=str(e))
-
-
+    
 @app.get("/api/history/{user_id}")
 def get_history(user_id: str):
     try:
