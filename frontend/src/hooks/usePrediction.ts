@@ -13,6 +13,7 @@ export function usePrediction() {
     setError(null);
     setResult(null);
 
+
     try {
       const prediction = await predictVulnerabilite(data);
       setResult(prediction);
@@ -44,5 +45,8 @@ export function usePrediction() {
 
   const clearHistory = useCallback(() => setHistory([]), []);
 
-  return { loading, result, error, history, stats, predict, clearHistory };
+  const loadHistory = useCallback((data: HistoryEntry[]) => {
+    setHistory(data);
+  }, []);
+  return { loading, result, error, history, stats, predict, clearHistory,  loadHistory };
 }

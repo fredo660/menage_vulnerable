@@ -5,7 +5,7 @@ import React, {
   } from "react";
   import type { Session } from "@supabase/supabase-js";
   import { supabase }                    from "../lib/Supabase";
-  import { checkHealth, saveToSupabase } from "../services/api";
+   import { checkHealth, saveToSupabase, getHistory} from "../services/api";
   import { usePrediction }               from "../hooks/usePrediction";
   import type { MenageInput, PredictionResult, HistoryEntry, StatsData } from "../types";
   
@@ -54,8 +54,9 @@ import React, {
     const [saving,         setSaving]         = useState(false);
     const [saveMsg,        setSaveMsg]        = useState<string | null>(null);
   
-    const { loading, result, error, history, stats, predict, clearHistory } = usePrediction();
+    const { loading, result, error, history, stats, predict, clearHistory, loadHistory } = usePrediction();
   
+    
     // ── Auth ────────────────────────────────────────────────
     useEffect(() => {
       supabase.auth.getSession().then(({ data }) => {
@@ -82,6 +83,20 @@ import React, {
       setAppView("landing");
     }, []);
   
+    useEffect(() => {
+      if (!session?.user?.id) return;
+    
+      const fetchHistory = async () => {
+        try {
+          const data = await getHistory(session.user.id);
+          loadHistory(data);
+        } catch (err) {
+          console.error("Erreur historique", err);
+        }
+      };
+    
+      fetchHistory();
+    }, [session, loadHistory]);
     // Bouton "Commencer" : connecté → app, sinon → auth
     const onStart = useCallback(() => {
       setAppView(session ? "app" : "auth");
@@ -103,21 +118,29 @@ import React, {
   
     // ── Sauvegarde ───────────────────────────────────────────
     const handleSave = useCallback(async () => {
-      if (!lastInput || !result) return;
+      if (!lastInput || !result || !session) return;
+    
       setSaving(true);
       setSaveMsg(null);
+    
       try {
-        await saveToSupabase({ ...lastInput, vulnerabilite: result.prediction });
+        await saveToSupabase({
+          ...lastInput,
+          vulnerabilite: result.prediction,
+          user_id: session.user.id
+        });
+    
         setSaveMsg("✓ Données enregistrées dans Supabase");
       } catch {
         setSaveMsg("✗ Erreur lors de l'enregistrement");
       } finally {
         setSaving(false);
       }
-    }, [lastInput, result]);
+    }, [lastInput, result, session]);
   
     const clearSaveMsg = useCallback(() => setSaveMsg(null), []);
   
+    
     return (
       <AppContext.Provider value={{
         appView, onStart,

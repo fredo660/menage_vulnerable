@@ -32,7 +32,7 @@ def predict_menage(data: dict):
     # 🔥 DataFrame au lieu de numpy
     df = pd.DataFrame([data])
 
-    # 🔥 forcer l’ordre exact des features
+     # 🔥 forcer l’ordre exact des features
     df = df[features]
 
     # scaling

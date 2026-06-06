@@ -15,8 +15,10 @@ from app.api.batch          import router as batch_router
 from app.services.model_service import load_model
 from dotenv import load_dotenv
 import os
-FRONTEND_URL = os.getenv("FRONTEND_URL")
+
 load_dotenv()
+
+FRONTEND_URL = os.getenv("FRONTEND_URL")
 app = FastAPI(title="Ménages Vulnérables API", version="2.0")
 
 # ── CORS — DOIT être avant include_router ─────────────────────
@@ -47,16 +49,31 @@ def startup():
 def root():
     return {"message": "API ménages vulnérables", "version": "2.0", "status": "ok"}
 
-@app.post("/save")
+@app.post("/api/save")
 def save_data(data: dict):
     try:
-        response = supabase.table("menages").insert(data).execute()
+        response = supabase.table("predictions").insert(data).execute()
         if response.data is None:
             raise HTTPException(status_code=400, detail="Insertion échouée")
         return {"message": "Données enregistrées", "data": response.data}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
+@app.get("/api/history/{user_id}")
+def get_history(user_id: str):
+    try:
+        response = (
+            supabase
+            .table("predictions")
+            .select("*")
+            .eq("user_id", user_id)
+            .order("created_at", desc=True)
+            .execute()
+        )
+        return response.data
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 # ── Tous les routers sous /api ────────────────────────────────
 app.include_router(predict_router,   prefix="/api")
 app.include_router(analytics_router, prefix="/api")

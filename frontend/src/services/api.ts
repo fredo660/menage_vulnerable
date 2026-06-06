@@ -55,7 +55,7 @@ export async function predictVulnerabilite(data: MenageInput): Promise<Predictio
 }
 
 export async function saveToSupabase(data: Record<string, unknown>): Promise<void> {
-  const response = await fetch(`${API_BASE}/save`, {
+  const response = await fetch(`${API_BASE}/api/save`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -74,4 +74,16 @@ export async function checkHealth(): Promise<boolean> {
   } catch {
     return false;
   }
+}
+
+export async function getHistory(userId: string) {
+  const response = await fetch(
+    `${API_BASE}/api/history/${userId}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Erreur chargement historique");
+  }
+
+  return response.json();
 }
