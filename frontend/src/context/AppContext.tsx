@@ -88,10 +88,14 @@ import React, {
     
       const fetchHistory = async () => {
         try {
-          const data = await getHistory(session.user.id);
-          loadHistory(data);
+          const res = await getHistory(session.user.id);
+    
+          const safeData = Array.isArray(res) ? res : res?.data ?? [];
+    
+          loadHistory(safeData);
         } catch (err) {
           console.error("Erreur historique", err);
+          loadHistory([]);
         }
       };
     
