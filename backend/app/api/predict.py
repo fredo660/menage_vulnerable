@@ -7,4 +7,5 @@ router = APIRouter()
 @router.post("/predict")
 def predict(data: InputData):
     result = predict_menage(data.dict())
-    return {"prediction": result}
+    print("RESULT:", result)
+    return {"prediction": result["prediction"], "probabilite": result["probabilite"]}
