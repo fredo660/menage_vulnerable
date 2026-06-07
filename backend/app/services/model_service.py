@@ -1,5 +1,6 @@
 import os
 import joblib
+import numpy as np
 import pandas as pd
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -7,29 +8,28 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH  = os.path.join(BASE_DIR, "..", "ml", "models", "model.pkl")
 SCALER_PATH = os.path.join(BASE_DIR, "..", "ml", "models", "scaler.pkl")
 
-model  = None
-scaler = None
+model    = None
+scaler   = None
 features = None
 
 
 def load_model():
     global model, scaler, features
-    model   = joblib.load(MODEL_PATH)
-    scaler  = joblib.load(SCALER_PATH)
+    model    = joblib.load(MODEL_PATH)
+    scaler   = joblib.load(SCALER_PATH)
     features = scaler.feature_names_in_
     print("✅ Model chargé")
 
 
 def encode_input(data: dict) -> dict:
     d = dict(data)
-
     for col in ["acces_eau", "electricite", "alimentation_suffisante", "acces_internet"]:
         v = d.get(col)
         if isinstance(v, bool):
             d[col] = int(v)
         elif isinstance(v, str):
             d[col] = 1 if v.lower() in ("oui", "true", "1") else 0
-        elif isinstance(v, int):
+        elif v is not None:
             d[col] = int(bool(v))
 
     if isinstance(d.get("zone"), str):
@@ -56,25 +56,38 @@ def predict_menage(data: dict) -> dict:
     if model is None or scaler is None:
         raise Exception("Model non chargé")
 
+    print("INPUT REÇU:", data)
+
     encoded = encode_input(data)
+    print("INPUT ENCODÉ:", encoded)
+
     df = pd.DataFrame([encoded])
     df = df[features]
     X_scaled = scaler.transform(df)
 
     prediction = int(model.predict(X_scaled)[0])
 
-    # Score discriminant → plus nuancé que predict_proba pour LDA
-    decision = model.decision_function(X_scaled)[0]  # shape (n_classes,) ou scalaire
+    # ── Score nuancé : distance de Mahalanobis normalisée ──────
+    # Centroïdes des classes dans l'espace transformé LDA
+    X_lda = model.transform(X_scaled)                    # projection dans espace LDA
+    means = model.means_                                 # centroïdes originaux
+    means_lda = model.transform(means)                   # centroïdes projetés
 
-    # Convertir en probabilité relative entre les classes
-    import numpy as np
-    if hasattr(decision, '__len__'):
-        exp_d = np.exp(decision - np.max(decision))  # softmax stable
-        probas = exp_d / exp_d.sum()
-        score = round(float(probas[prediction]) * 100, 1)
+    # Distance euclidienne aux centroïdes dans l'espace LDA
+    dists = np.linalg.norm(X_lda - means_lda, axis=1)   # distance à chaque classe
+
+    # Score = proximité à la classe prédite, normalisée entre 30 et 95
+    d_pred  = dists[prediction]
+    d_max   = dists.max()
+    d_min   = dists.min()
+
+    if d_max == d_min:
+        score = 70.0
     else:
-        # Cas binaire
-        prob = 1 / (1 + np.exp(-float(decision)))
-        score = round(prob * 100, 1) if prediction == 1 else round((1 - prob) * 100, 1)
+        # Plus proche du centroïde → score plus haut
+        proximity = 1 - (d_pred - d_min) / (d_max - d_min)
+        score = round(30 + proximity * 65, 1)   # entre 30% et 95%
+
+    print(f"DEBUG → prediction={prediction}, score={score}")
 
     return {"prediction": prediction, "probabilite": score}
