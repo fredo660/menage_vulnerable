@@ -38,19 +38,20 @@ export async function predictVulnerabilite(data: MenageInput): Promise<Predictio
   }
 
   const json = await response.json();
-  const predNum = json.prediction as number;
-  const meta = VULNERABILITY_MAP[predNum] ?? VULNERABILITY_MAP[1];
-
-  // Simulate a confidence score based on prediction
-  const scoreMap: Record<number, number> = { 0: 82, 1: 71, 2: 88 };
-
+  const predNum  = json.prediction as number;
+  const raw = json.probabilite;
+  const score = Number.isFinite(Number(raw)) ? Math.round(Number(raw)) : 0;
+  const meta     = VULNERABILITY_MAP[predNum] ?? VULNERABILITY_MAP[1];
+  const body = JSON.stringify(data);
+console.log("Body envoyé:", body);  // ← voir exactement ce qui part
+  console.log("Réponse API:", json); // ← vérifier que probabilite est bien là
   return {
     prediction: predNum,
-    label: meta.label,
-    color: meta.color,
-    icon: meta.icon,
+    label:      meta.label,
+    color:      meta.color,
+    icon:       meta.icon,
     description: meta.description,
-    score: scoreMap[predNum] ?? 75,
+    score,                          // ← plus de valeur fixe
   };
 }
 
@@ -59,6 +60,7 @@ export async function saveToSupabase(data: Record<string, unknown>): Promise<voi
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
+
   });
 
   if (!response.ok) {

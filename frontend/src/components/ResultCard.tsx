@@ -31,7 +31,7 @@ const ResultCard: React.FC<ResultCardProps> = ({ result, input, onSave, saving }
     criticalFn(input[key] as number)
   );
 
-  const percentage = result.score;
+  const percentage = Number.isFinite(result.score) ? result.score : 0;
 
   return (
     <div className="result-card" style={{ "--result-color": result.color } as React.CSSProperties}>
