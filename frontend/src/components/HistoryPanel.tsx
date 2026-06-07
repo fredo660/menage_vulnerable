@@ -8,23 +8,22 @@ interface HistoryPanelProps {
 }
 
 const LABEL_NAMES: Record<string, string> = {
-  faible: "Faible",
-  "modérée": "Modérée",
+  faible:  "Faible",
   "élevée": "Élevée",
 };
 
 const getColor = (label: string) => {
   switch (label) {
-    case "faible": return "#22c55e";
-    case "modérée": return "#f59e0b";
-    case "élevée": return "#ef4444";
-    default: return "#8b92a8";
+    case "faible":  return "#22c55e";
+    case "élevée":  return "#ef4444";
+    default:        return "#8b92a8";
   }
 };
 
 const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) => {
   return (
     <div className="history-panel">
+
       {/* STATS */}
       <div className="stats-grid">
         <div className="stat-card stat-total">
@@ -34,10 +33,6 @@ const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) 
         <div className="stat-card stat-faible">
           <span className="stat-big">{stats.faible}</span>
           <span className="stat-desc">Vulnérabilité faible</span>
-        </div>
-        <div className="stat-card stat-moderee">
-          <span className="stat-big">{stats.moderee}</span>
-          <span className="stat-desc">Vulnérabilité modérée</span>
         </div>
         <div className="stat-card stat-elevee">
           <span className="stat-big">{stats.elevee}</span>
@@ -57,13 +52,6 @@ const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) 
                 title={`Faible: ${stats.faible}`}
               />
             )}
-            {stats.moderee > 0 && (
-              <div
-                className="dist-seg seg-moderee"
-                style={{ width: `${(stats.moderee / stats.total) * 100}%` }}
-                title={`Modérée: ${stats.moderee}`}
-              />
-            )}
             {stats.elevee > 0 && (
               <div
                 className="dist-seg seg-elevee"
@@ -73,9 +61,14 @@ const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) 
             )}
           </div>
           <div className="dist-legend">
-            <span className="legend-item"><span className="dot dot-faible" />Faible ({Math.round((stats.faible / stats.total) * 100)}%)</span>
-            <span className="legend-item"><span className="dot dot-moderee" />Modérée ({Math.round((stats.moderee / stats.total) * 100)}%)</span>
-            <span className="legend-item"><span className="dot dot-elevee" />Élevée ({Math.round((stats.elevee / stats.total) * 100)}%)</span>
+            <span className="legend-item">
+              <span className="dot dot-faible" />
+              Faible ({Math.round((stats.faible / stats.total) * 100)}%)
+            </span>
+            <span className="legend-item">
+              <span className="dot dot-elevee" />
+              Élevée ({Math.round((stats.elevee / stats.total) * 100)}%)
+            </span>
           </div>
         </div>
       )}
@@ -107,20 +100,30 @@ const HistoryPanel: React.FC<HistoryPanelProps> = ({ history, stats, onClear }) 
                 />
                 <div>
                   <p className="history-label">
-                    {LABEL_NAMES[entry.result.label]}
+                    {LABEL_NAMES[entry.result.label] ?? entry.result.label}
                     {idx === 0 && <span className="new-badge">Nouveau</span>}
                   </p>
                   <p className="history-meta">
-                    {entry.input.revenu_mensuel.toLocaleString("fr-MG")} Ar · {entry.input.taille_menage} pers. · {entry.input.zone === 1 ? "Urbain" : "Rural"}
+                    {entry.input.revenu_mensuel.toLocaleString("fr-MG")} Ar
+                    {" · "}
+                    {entry.input.taille_menage} pers.
+                    {" · "}
+                    {entry.input.zone === 1 ? "Urbain" : "Rural"}
                   </p>
                 </div>
               </div>
               <div className="history-item-right">
-                <span className="history-score" style={{ color: entry.result.color }}>
+                <span
+                  className="history-score"
+                  style={{ color: getColor(entry.result.label) }}
+                >
                   {entry.result.score}%
                 </span>
                 <span className="history-time">
-                  {entry.timestamp.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" })}
+                  {new Date(entry.timestamp).toLocaleTimeString("fr-FR", {
+                    hour:   "2-digit",
+                    minute: "2-digit",
+                  })}
                 </span>
               </div>
             </li>
