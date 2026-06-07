@@ -53,23 +53,28 @@ def encode_input(data: dict) -> dict:
 
 
 def predict_menage(data: dict) -> dict:
-    print("INPUT REÇU:", data) 
     if model is None or scaler is None:
         raise Exception("Model non chargé")
 
-    # 1. Encoder les valeurs texte
     encoded = encode_input(data)
-    print("INPUT ENCODÉ:", encoded)
-    # 2. DataFrame dans le bon ordre
     df = pd.DataFrame([encoded])
     df = df[features]
-
-    # 3. Scaling
     X_scaled = scaler.transform(df)
 
-    # 4. Prédiction + probabilité
-    prediction  = int(model.predict(X_scaled)[0])
-    probas      = model.predict_proba(X_scaled)[0]          # [p_faible, p_moderee, p_elevee]
-    score       = round(float(probas[prediction]) * 100, 1)  # probabilité de la classe prédite
+    prediction = int(model.predict(X_scaled)[0])
+
+    # Score discriminant → plus nuancé que predict_proba pour LDA
+    decision = model.decision_function(X_scaled)[0]  # shape (n_classes,) ou scalaire
+
+    # Convertir en probabilité relative entre les classes
+    import numpy as np
+    if hasattr(decision, '__len__'):
+        exp_d = np.exp(decision - np.max(decision))  # softmax stable
+        probas = exp_d / exp_d.sum()
+        score = round(float(probas[prediction]) * 100, 1)
+    else:
+        # Cas binaire
+        prob = 1 / (1 + np.exp(-float(decision)))
+        score = round(prob * 100, 1) if prediction == 1 else round((1 - prob) * 100, 1)
 
     return {"prediction": prediction, "probabilite": score}
