@@ -4,20 +4,22 @@ import numpy as np
 import pandas as pd
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH   = os.path.join(BASE_DIR, "..", "ml", "models", "model.pkl")
+SCALER_PATH  = os.path.join(BASE_DIR, "..", "ml", "models", "scaler.pkl")
+DIST_PATH    = os.path.join(BASE_DIR, "..", "ml", "models", "distance_percentiles.pkl")
 
-MODEL_PATH  = os.path.join(BASE_DIR, "..", "ml", "models", "model.pkl")
-SCALER_PATH = os.path.join(BASE_DIR, "..", "ml", "models", "scaler.pkl")
-
-model    = None
-scaler   = None
-features = None
+model               = None
+scaler              = None
+features            = None
+distance_percentiles = None
 
 
 def load_model():
-    global model, scaler, features
-    model    = joblib.load(MODEL_PATH)
-    scaler   = joblib.load(SCALER_PATH)
-    features = scaler.feature_names_in_
+    global model, scaler, features, distance_percentiles
+    model                = joblib.load(MODEL_PATH)
+    scaler               = joblib.load(SCALER_PATH)
+    features             = scaler.feature_names_in_
+    distance_percentiles = joblib.load(DIST_PATH)
     print("✅ Model chargé")
 
 
@@ -25,12 +27,9 @@ def encode_input(data: dict) -> dict:
     d = dict(data)
     for col in ["acces_eau", "electricite", "alimentation_suffisante", "acces_internet"]:
         v = d.get(col)
-        if isinstance(v, bool):
-            d[col] = int(v)
-        elif isinstance(v, str):
-            d[col] = 1 if v.lower() in ("oui", "true", "1") else 0
-        elif v is not None:
-            d[col] = int(bool(v))
+        if isinstance(v, bool):   d[col] = int(v)
+        elif isinstance(v, str):  d[col] = 1 if v.lower() in ("oui","true","1") else 0
+        elif v is not None:       d[col] = int(bool(v))
 
     if isinstance(d.get("zone"), str):
         d["zone"] = 1 if d["zone"].lower() == "urbain" else 0
@@ -56,38 +55,30 @@ def predict_menage(data: dict) -> dict:
     if model is None or scaler is None:
         raise Exception("Model non chargé")
 
-    print("INPUT REÇU:", data)
-
-    encoded = encode_input(data)
-    print("INPUT ENCODÉ:", encoded)
-
-    df = pd.DataFrame([encoded])
-    df = df[features]
+    encoded  = encode_input(data)
+    df       = pd.DataFrame([encoded])
+    df       = df[features]
     X_scaled = scaler.transform(df)
 
     prediction = int(model.predict(X_scaled)[0])
+    classes    = list(model.classes_)
+    cls_idx    = classes.index(prediction)
 
-    # ── Score nuancé : distance de Mahalanobis normalisée ──────
-    # Centroïdes des classes dans l'espace transformé LDA
-    X_lda = model.transform(X_scaled)                    # projection dans espace LDA
-    means = model.means_                                 # centroïdes originaux
-    means_lda = model.transform(means)                   # centroïdes projetés
+    # Distance au centroïde de la classe prédite
+    X_lda     = model.transform(X_scaled)
+    means_lda = model.transform(model.means_)
+    dist      = float(np.linalg.norm(X_lda[0] - means_lda[cls_idx]))
 
-    # Distance euclidienne aux centroïdes dans l'espace LDA
-    dists = np.linalg.norm(X_lda - means_lda, axis=1)   # distance à chaque classe
+    # Normalisation par percentiles de référence
+    p10 = distance_percentiles[prediction]["p10"]
+    p90 = distance_percentiles[prediction]["p90"]
 
-    # Score = proximité à la classe prédite, normalisée entre 30 et 95
-    d_pred  = dists[prediction]
-    d_max   = dists.max()
-    d_min   = dists.min()
-
-    if d_max == d_min:
+    if p90 == p10:
         score = 70.0
     else:
-        # Plus proche du centroïde → score plus haut
-        proximity = 1 - (d_pred - d_min) / (d_max - d_min)
-        score = round(30 + proximity * 65, 1)   # entre 30% et 95%
+        proximity = 1 - (dist - p10) / (p90 - p10)
+        proximity = max(0.0, min(1.0, proximity))
+        score = round(35 + proximity * 55, 1)  # [35%, 90%]
 
-    print(f"DEBUG → prediction={prediction}, score={score}")
-
+    print(f"DEBUG → prediction={prediction}, dist={dist:.3f}, score={score}")
     return {"prediction": prediction, "probabilite": score}

@@ -79,30 +79,53 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 
 # -------------------------
-# VÉRIFICATION DU SCORE NUANCÉ
+# CALCUL DES DISTANCES DE RÉFÉRENCE (par classe)
 # -------------------------
-# Tester que la distance de Mahalanobis fonctionne bien sur le test set
-X_lda      = lda.transform(X_test_scaled)
-means_lda  = lda.transform(lda.means_)
-classes    = list(lda.classes_)
+X_train_lda = lda.transform(X_train_scaled)
+means_lda   = lda.transform(lda.means_)
+classes     = list(lda.classes_)
 
+# Pour chaque point d'entraînement, calculer la distance à son centroïde
+ref_distances = {cls: [] for cls in classes}
+
+for i in range(len(X_train_lda)):
+    true_cls  = y_train.iloc[i]
+    cls_idx   = classes.index(true_cls)
+    dist      = float(np.linalg.norm(X_train_lda[i] - means_lda[cls_idx]))
+    ref_distances[true_cls].append(dist)
+
+# Sauvegarder les percentiles pour normalisation
+distance_percentiles = {}
+for cls in classes:
+    dists = np.array(ref_distances[cls])
+    distance_percentiles[cls] = {
+        "p10": float(np.percentile(dists, 10)),
+        "p90": float(np.percentile(dists, 90)),
+    }
+    print(f"Classe {cls} → p10={distance_percentiles[cls]['p10']:.3f}, p90={distance_percentiles[cls]['p90']:.3f}")
+
+# -------------------------
+# VÉRIFICATION
+# -------------------------
+X_test_lda = lda.transform(X_test_scaled)
 scores = []
-for i in range(len(X_lda)):
-    point      = X_lda[i]
-    pred_idx   = classes.index(lda.predict(X_test_scaled[i:i+1])[0])
-    dists      = np.linalg.norm(point - means_lda, axis=1)
-    d_pred     = dists[pred_idx]
-    d_max      = dists.max()
-    d_min      = dists.min()
-    if d_max == d_min:
+for i in range(len(X_test_lda)):
+    pred     = lda.predict(X_test_scaled[i:i+1])[0]
+    cls_idx  = classes.index(pred)
+    dist     = float(np.linalg.norm(X_test_lda[i] - means_lda[cls_idx]))
+    p10      = distance_percentiles[pred]["p10"]
+    p90      = distance_percentiles[pred]["p90"]
+    # Plus loin du centroïde → score plus bas
+    if p90 == p10:
         score = 70.0
     else:
-        proximity = 1 - (d_pred - d_min) / (d_max - d_min)
-        score = round(30 + proximity * 65, 1)
+        proximity = 1 - (dist - p10) / (p90 - p10)
+        proximity = max(0.0, min(1.0, proximity))  # clamp [0,1]
+        score = round(35 + proximity * 55, 1)       # [35%, 90%]
     scores.append(score)
 
 scores = np.array(scores)
-print(f"\n✅ Score nuancé — min: {scores.min()}, max: {scores.max()}, mean: {scores.mean():.1f}")
+print(f"\n✅ Score — min: {scores.min()}, max: {scores.max()}, mean: {scores.mean():.1f}")
 print(f"   Distribution → <50%: {(scores<50).sum()}, 50-75%: {((scores>=50)&(scores<75)).sum()}, >75%: {(scores>=75).sum()}")
 
 # -------------------------
@@ -111,8 +134,9 @@ print(f"   Distribution → <50%: {(scores<50).sum()}, 50-75%: {((scores>=50)&(s
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
-joblib.dump(lda,      os.path.join(MODEL_DIR, "model.pkl"))
-joblib.dump(scaler,   os.path.join(MODEL_DIR, "scaler.pkl"))
-joblib.dump(FEATURES, os.path.join(MODEL_DIR, "features.pkl"))
+joblib.dump(lda,                  os.path.join(MODEL_DIR, "model.pkl"))
+joblib.dump(scaler,               os.path.join(MODEL_DIR, "scaler.pkl"))
+joblib.dump(FEATURES,             os.path.join(MODEL_DIR, "features.pkl"))
+joblib.dump(distance_percentiles, os.path.join(MODEL_DIR, "distance_percentiles.pkl"))  # ← nouveau
 
 print("\n✅ Modèle sauvegardé dans :", MODEL_DIR)
